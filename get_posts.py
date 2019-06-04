@@ -17,15 +17,25 @@ def get_post_text(post):
 
     return text
 
+def get_frontmatter(post):
+    return """---
+title: %s
+date: "%s"
+description: Just a notion blog post
+---""" % (post["name"], post["updated"].isoformat())
+
+
 field_blacklist = ["publish_date"]
 def resolve_fields(post_record):
-    post = post_record.get_all_properties()
-    formatted_post = {
+    post = {k: v for k, v in post_record.get_all_properties().items() if k not in field_blacklist}
+    header = get_frontmatter(post)
+
+    return {
         **post,
         "updated": post["updated"].isoformat(),
-        "markdown": get_post_text(post_record)
+        "markdown": get_post_text(post_record),
+        "header": header
     }
-    return {k: v for k, v in formatted_post.items() if k not in field_blacklist}
 
 def get_blog_posts():
     page = client.get_block("https://www.notion.so/2e831e83a61846ccbf184c0f00753549")
@@ -33,4 +43,12 @@ def get_blog_posts():
     return [resolve_fields(post) for post in page.collection.get_rows() if post.get_property('published')]
 
 
-print(json.dumps(get_blog_posts()))
+try:
+    os.mkdir("posts/")
+except:
+    pass
+for post in get_blog_posts():
+    filename = post["name"] + "/index.md"
+    os.mkdir("posts/" + post["name"])
+    with open("posts/" + filename, "w") as text_file:
+        text_file.write(post["header"] + post["markdown"])
