@@ -1,6 +1,6 @@
 ---
-title: Quotes
-date: "2019-06-04T03:33:00"
+title: Quote List
+date: "2019-06-05T17:57:00"
 description: Just a notion blog post
 ---
 
