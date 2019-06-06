@@ -5,4 +5,4 @@
   publish = "blog/public/"
 
   # Default build command.
-  command = "./build.sh"
+  command = "bash build.sh"
