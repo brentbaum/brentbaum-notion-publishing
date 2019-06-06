@@ -24,7 +24,7 @@ function Bio() {
             }}
           >
             <p>
-              Written by <strong>{author}</strong> who lives and works in Charlottesville at TwinThread, building data-driven products.
+              Written by <strong>{author}</strong>. He lives and works in Charlottesville at TwinThread, building data-driven products.
               {` `}
               <a href={`https://twitter.com/${social.twitter}`}>
                 You should follow him on Twitter
