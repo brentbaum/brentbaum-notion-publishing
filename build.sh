@@ -11,4 +11,5 @@ cd ../
 cp -r notion/posts blog/content/blog
 cd blog
 echo "Build frontend site"
+npm install
 npm run-script build
