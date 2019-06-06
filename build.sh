@@ -1,3 +1,5 @@
+pip3 install --user pipenv
+
 echo "Starting build"
 cd notion
 pipenv install
