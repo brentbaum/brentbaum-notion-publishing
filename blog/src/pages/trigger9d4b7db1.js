@@ -5,7 +5,7 @@ const Trigger9d4b7db1 = () => {
         fetch("https://api.netlify.com/build_hooks/5cf88e880308f66f9d70c480", {method: "POST"})
     }, [])
 
-    return <div>Build queued.</div>
+    return <div>Build queued. <a href="https://app.netlify.com/sites/brentbaum-notion/deploys">Monitor status</a></div>
 }
 
 console.log(Trigger9d4b7db1)
