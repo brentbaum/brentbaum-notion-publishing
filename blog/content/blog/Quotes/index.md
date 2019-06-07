@@ -1,7 +1,7 @@
 ---
 title: Quotes
-date: "2019-06-06T04:25:00"
-description: Just a notion blog post
+date: "2019-06-04"
+description: 1 words
 ---
 
 > "Many problems are best solved by working in two phases, one in which you let yourself make mistakes, followed by a second in which you aggressively fix them."

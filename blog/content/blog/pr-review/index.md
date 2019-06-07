@@ -1,7 +1,7 @@
 ---
 title: How I review PRs
-date: "2019-06-06T17:22:00"
-description: Just a notion blog post
+date: "2019-06-06"
+description: 1 words
 ---1. Reason about potential bugs that could be in the code (as a more experienced developer you may catch some)
 
 1. Find structural issues with code (bad abstractions)

@@ -1,8 +1,8 @@
 ---
-title: Notion+Gatsby CMS
-date: "2019-06-07T04:01:00"
-description: Just a notion blog post
----Todos
+title: Notion+Gatsby CMS (Making of this Site)
+date: "2019-06-06"
+description: 1 words
+---
 
 ### Goals
 
@@ -14,6 +14,8 @@ I've given myself one week to complete this project. Here we go!
 
 ### Saturday night: Planning requirements & research
 
+I spent some time thinking through what I needed from this project. After an hour, I settled on the following flow:
+
 __Desired publishing flow:__
 
 1. Create page to be published
@@ -24,7 +26,15 @@ __Desired publishing flow:__
 
 This API should handle everything I need to do w/ notion: [https://pypi.org/project/notion/](https://pypi.org/project/notion/)
 
-### Sunday night: POC
+__Requirements:__
+
++ Hard to accidentally publish private or sensitive information
+
++ Frictionless to publish small posts
+
++ Support text, with clear path to rich media (tables, images)
+
+### Sunday night: Proof of Concept
 
 Install notion API, take two passes at ways to recursively pull content for the blog. Settled on a table of posts w/ a "Published" toggle. This API is really fun to work with!
 
@@ -32,7 +42,7 @@ My script (30 lines long) pulls down a notion page, finds a table on that page, 
 
 Technical risk identified: Making custom UI widgets for every block type in Notion could get painful. I'm not quite sure how I would make that work with markdown, too. 
 
-### Monday night: Blog
+### Monday night: Frontend with Gatsby
 
 Gatsby is a wonderful piece of technology. It is easy to use, familiar (built on React), and creates a nice, polished end product. They have a starter kit that I think I can use to go from zero to blog in a couple hours.
 
@@ -40,7 +50,7 @@ Success! I had some nasty errors messages along the way and lost an hour experim
 
 At the end of the night, my project is looking 10x more real:
 
-### Tuesday night: bash time
+### Tuesday night: Bash time!
 
 I have limited time tonight, so I'm going to focus on laying the groundwork for automatic site builds. At the end of the night, I have a 10 line build script that calls all the pieces I previously set up. 
 
@@ -58,11 +68,25 @@ Now, if only there was a way to get feedback in notion when a triggered deploy s
 
 Woke up Thursday morning with a solution: Call a Netlify API with something that will only succeed on my account if I'm logged in. Duh!
 
-### Thursday night:
+### Thursday night: Post types
 
 I added a button to view recent netlify deploys on the "build trigger" screen. Eventually I'll want to mirror build status between netlify build and notion, but that's out of scope for this project.
 
-I've added the ability to resolve page links 
+A couple polish items were added at the last minute: slugs (for prettier links) and correct propagation of the publishing date. 
+
+The last feature I've added is the ability to resolve the text page links. This will let me drop pages into my blog from anywhere in Notion - allowing my content to live wherever and still be published.
+
+### Done!
+
+At this point, I've accomplished what I set out to do. I have a frictionless, safe way to publish my work on the web. The source code for this project can be found at: [https://github.com/brentbaum/brentbaum-notion-publishing](https://github.com/brentbaum/brentbaum-notion-publishing). 
+
+### Next steps
+
++ Support for more block types
+
++ Clean CMS section up and publish as an open source library
+
++ Style blog 
 
 Notion Publishing
 
