@@ -22,6 +22,8 @@ def get_post_text(post):
     for child in post.children:
         if child.type == "page":
             text += get_post_text(child)
+        if child.type == "image":
+            pass
         else:
             prefix = prefixes.get(child.type, "")
             text += prefix + child.title + "\n\n"
@@ -69,8 +71,7 @@ def get_blog_posts():
     ]
 
 
-if __name__ == "main":
-
+if __name__ == "__main__":
     try:
         os.mkdir("posts/")
     except:

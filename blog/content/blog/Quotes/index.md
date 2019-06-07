@@ -14,6 +14,12 @@ __Erik Udstuen__
 
 
 
+[https://pbs.twimg.com/media/D8VDhEFU8AAKwh8?format=jpg&name=medium](https://pbs.twimg.com/media/D8VDhEFU8AAKwh8?format=jpg&name=medium)
+
+
+
+D8VDhEFU8AAKwh8
+
 D8VDhEFU8AAKwh8 (1032×318)
 
 Isaac Newton at the end of his life 
