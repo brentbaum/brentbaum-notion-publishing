@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from notion.client import NotionClient
 
 # Obtain the `token_v2` value by inspecting your browser cookies on a logged-in session on Notion.so
@@ -31,14 +32,15 @@ def get_post_text(post):
     return text
 
 
-def get_frontmatter(post):
+def get_frontmatter(post, text):
     return """---
 title: %s
 date: "%s"
-description: Just a notion blog post
+description: %s
 ---""" % (
         post["name"],
-        post["updated"].isoformat(),
+        post["publish_date"].start.isoformat(),
+        "Word count: %s" % len(re.sub("\W+", "", text).split()),
     )
 
 
@@ -46,17 +48,15 @@ field_blacklist = ["publish_date"]
 
 
 def resolve_fields(post_record):
-    post = {
-        k: v
-        for k, v in post_record.get_all_properties().items()
-        if k not in field_blacklist
-    }
-    header = get_frontmatter(post)
+    markdown = get_post_text(post_record)
+    post = post_record.get_all_properties()
+    header = get_frontmatter(post, markdown)
 
     return {
         **post,
+        "publish_date": post["publish_date"].start.isoformat(),
         "updated": post["updated"].isoformat(),
-        "markdown": get_post_text(post_record),
+        "markdown": markdown,
         "header": header,
     }
 
