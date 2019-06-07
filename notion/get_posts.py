@@ -77,7 +77,7 @@ if __name__ == "__main__":
     except:
         pass
     for post in get_blog_posts():
-        filename = post["name"] + "/index.md"
-        os.mkdir("posts/" + post["name"])
+        filename = post["slug"] + "/index.md"
+        os.mkdir("posts/" + post["slug"])
         with open("posts/" + filename, "w") as text_file:
             text_file.write(post["header"] + post["markdown"])
