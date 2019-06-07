@@ -40,7 +40,7 @@ description: %s
 ---""" % (
         post["name"],
         post["publish_date"].start.isoformat(),
-        "%s words" % len(re.sub("\W+", "", text).split()),
+        "%s words" % len(text.split()),
     )
 
 
