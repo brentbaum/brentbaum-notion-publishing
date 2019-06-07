@@ -63,7 +63,8 @@ class Layout extends React.Component {
         <header>{header}</header>
         <main>{children}</main>
         <footer>
-          © Brent Baumgartner {new Date().getFullYear()}. See how this site was built.
+          © Brent Baumgartner {new Date().getFullYear()}.{" "}
+          <a href="/publishing/">See how this site was built</a>.
         </footer>
       </div>
     )
