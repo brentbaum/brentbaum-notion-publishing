@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Brent's Brain Dump`,
+    title: `Brent's Lab Notebook`,
     author: `Brent Baumgartner`,
     description: `Hi, I'm Brent, a product developer from Charlottesville. This is a daily dump of my personal notes.`,
     siteUrl: `https://5cf8121c15f2049acc68bfca--brenbaum-blog.netlify.com/`,
